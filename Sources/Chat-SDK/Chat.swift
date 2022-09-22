@@ -20,15 +20,15 @@ public class Chat {
     
     private var hubConnection : HubConnection!
     private var chatHub : HubProxy!
-    var user : Model?
-    var userMessage : UserMessage?
-    var detailOfVisitor : VisitorMessageDetails?
+    public var user : Model?
+    public var userMessage : UserMessage?
+    public var detailOfVisitor : VisitorMessageDetails?
     private var baseURL = "https://tlp.360scrm.com"
     private var userId = UserDefaults.standard.integer(forKey: "visitorId")
     private var sessionId = UserDefaults.standard.integer(forKey: "sessionId")
     var messages: [String] = [String]()
     var previousMessages: [WebChatDetialVisitor]?
-    var delegate: ChatDelegate?
+    public var delegate: ChatDelegate?
     @IBOutlet weak var typingLBl: UILabel!
     
     public init() {}

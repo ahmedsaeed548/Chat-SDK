@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VisitorMessageDetails: Codable {
+public struct VisitorMessageDetails: Codable {
     let visitorID, visitorSession: Int
     let visitorSessionName: String
     let webChatDetialVisitor: [WebChatDetialVisitor]?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Codable {
+public struct User: Codable {
     let model: Model
 
     enum CodingKeys: String, CodingKey {
@@ -16,7 +16,7 @@ struct User: Codable {
 }
 
 // MARK: - Model
-struct Model: Codable {
+public struct Model: Codable {
     let id: Int
     let connectionID: String?
     let name, email: String?
@@ -37,7 +37,7 @@ struct Model: Codable {
     }
 }
 // MARK: - VisitorSession
-struct VisitorSession: Codable {
+public struct VisitorSession: Codable {
     let id: Int?
     let name: String?
     let createdOn: String?
