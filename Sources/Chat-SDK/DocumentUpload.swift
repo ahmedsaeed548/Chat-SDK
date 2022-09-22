@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import UIKit
 
-class DocumentUpload {
+public class DocumentUpload {
     
     static func ImageUpload(_ image: UIImage, url: String) {
         guard image.jpegData(compressionQuality: 0.9) != nil else {

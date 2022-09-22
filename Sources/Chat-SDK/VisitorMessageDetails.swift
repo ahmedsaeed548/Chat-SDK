@@ -22,7 +22,7 @@ struct VisitorMessageDetails: Codable {
 
 
 // MARK: - WebChatDetialVisitor
-struct WebChatDetialVisitor: Codable {
+public struct WebChatDetialVisitor: Codable {
     let id: Int?
     let wcVisitorID: Int?
     let name: String?

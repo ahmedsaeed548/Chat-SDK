@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserMessage: Codable {
+public struct UserMessage: Codable {
     let id: Int?
     let wcVisitorID: Int?
   //  let fromID: Int?

@@ -14,7 +14,7 @@ enum StatusResponse: String {
     case badRequest = ""
 }
 
-class ServiceManager {
+public class ServiceManager {
     
     static func postApiCall<T: Decodable>(parameters: [String : Any], apiKey: String, completion: @escaping (Result<T,Error>) -> Void) {
     

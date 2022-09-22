@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SignalRSwift
 
-protocol ChatDelegate: AnyObject {
+public protocol ChatDelegate: AnyObject {
     func receiveMessage(message: String)
     func receiveImage(imagePath: String)
     func previousMessages(messages: [WebChatDetialVisitor])
@@ -29,8 +29,9 @@ public class Chat {
     var messages: [String] = [String]()
     var previousMessages: [WebChatDetialVisitor]?
     var delegate: ChatDelegate?
-    
     @IBOutlet weak var typingLBl: UILabel!
+    
+    public init() {}
     
     public func createConnection(key: String) {
         
