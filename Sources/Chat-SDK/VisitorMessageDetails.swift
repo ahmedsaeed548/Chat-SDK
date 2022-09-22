@@ -28,9 +28,9 @@ public struct WebChatDetialVisitor: Codable {
     let name: String?
     let connectionID: String?
     let sessionID: Int?
-    let message, messageDate: String?
+   public let message, messageDate: String?
     let isMediaFile: Bool?
-    let isReply: Bool?
+  public let isReply: Bool?
     let webChatDetialVisitorExtension: String?
      //  let tags: NSNull
     //    let displayName: String?
