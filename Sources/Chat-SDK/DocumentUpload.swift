@@ -17,7 +17,7 @@ public class DocumentUpload {
             }
             let imagedata = image.jpegData(compressionQuality: 0.3)
         AF.upload(multipartFormData: { multipartFormData in
-                      multipartFormData.append(imagedata!, withName: "files", fileName: "image", mimeType: "image/jpeg")
+                      multipartFormData.append(imagedata!, withName: "files", fileName: "image.jpg", mimeType: "image/jpg")
                   
           }, to: "\(url)")
               .response { response in
@@ -30,7 +30,7 @@ public class DocumentUpload {
     static func audioUpload(path: URL, url: String, fileName: String) {
     
         AF.upload(multipartFormData: { multipartFormData in
-                      multipartFormData.append(path, withName: "files", fileName: fileName, mimeType: "image/wav")
+                      multipartFormData.append(path, withName: "files", fileName: fileName, mimeType: "\(fileName)/wav")
                   
           }, to: "\(url)")
               .response { response in
