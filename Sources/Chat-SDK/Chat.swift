@@ -14,6 +14,7 @@ public protocol ChatDelegate: AnyObject {
     func receiveMessage(message: String)
     func receiveImage(imagePath: String)
     func previousMessages(messages: [WebChatDetialVisitor])
+    var previousMessages: [WebChatDetialVisitor]? { get set }
 }
 
 public class Chat {
@@ -27,7 +28,7 @@ public class Chat {
     private var userId = UserDefaults.standard.integer(forKey: "visitorId")
     private var sessionId = UserDefaults.standard.integer(forKey: "sessionId")
     var messages: [String] = [String]()
-    var previousMessages: [WebChatDetialVisitor]?
+    public var previousMessages: [WebChatDetialVisitor]?
     public var delegate: ChatDelegate?
     @IBOutlet weak var typingLBl: UILabel!
     
@@ -124,6 +125,7 @@ public class Chat {
                 print(response)
                 self.detailOfVisitor = response
                 self.previousMessages = response.webChatDetialVisitor ?? []
+                self.delegate?.previousMessages = response.webChatDetialVisitor ?? []
                 self.delegate?.previousMessages(messages: self.previousMessages ?? [])
             case .failure(let failure):
                 print(failure)
